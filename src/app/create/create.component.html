@@ -4,12 +4,14 @@
             <mat-card-title style="margin-bottom: 20px; text-align: center">Add Post</mat-card-title>
             <form [formGroup]="createForm" (ngSubmit)="addPost()">
                 <div class="input" style="margin: 0 auto; display: flex; align-items: center; flex-direction: column;">
-                    <mat-form-field appearance="fill">
-                        <input matInput placeholder="Enter Title" formControlName="title">
-                    </mat-form-field>
+                    <div class="input-fields">
                         <mat-form-field appearance="fill">
-                            <textarea matInput placeholder="Leave a message" style="margin-top: 10px;" formControlName="body"></textarea>
-                    </mat-form-field>
+                            <input matInput placeholder="Enter Title" formControlName="title">
+                        </mat-form-field>
+                            <mat-form-field appearance="fill">
+                                <textarea matInput placeholder="Leave a message" style="margin-top: 10px;" formControlName="body"></textarea>
+                        </mat-form-field>
+                    </div>
                     <mat-card-actions style="text-align: center; margin: 0;">
                     <button mat-raised-button color="primary" type="submit"
                     [disabled]="!createForm.valid"

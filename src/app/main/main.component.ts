@@ -38,5 +38,13 @@ export class MainComponent implements OnInit {
     })
   }
 
+  // Delete Post
+  deletePost(post: any) {
+    this.dataService.deletePost(post)
+    .subscribe((res: any) => {
+      const index = this.posts.indexOf(post)
+      this.posts.splice(index, 1)
+    })
+  }
   
 }

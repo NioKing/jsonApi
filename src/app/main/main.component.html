@@ -4,6 +4,9 @@
         <div class="post" style="width: 400px; margin: 20px auto; text-align: center;" *ngFor="let post of posts">
             <mat-card>
                 <mat-card-content>
+                    <div class="delete" style="text-align: end">
+                        <mat-icon (click)="deletePost(post)" style="cursor: pointer">close</mat-icon>
+                    </div>
                     <mat-card-subtitle>{{post.id}}</mat-card-subtitle>
                     <mat-card-title style="margin-bottom: 20px;">{{post.title}}</mat-card-title>
                     <mat-card-content>{{post.body}}</mat-card-content>
