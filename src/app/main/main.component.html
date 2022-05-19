@@ -1,0 +1,18 @@
+<app-create (postEvent)="createPost($event)"></app-create>
+<mat-card>
+    <div class="post-list">
+        <div class="post" style="width: 400px; margin: 20px auto; text-align: center;" *ngFor="let post of posts">
+            <mat-card>
+                <mat-card-content>
+                    <mat-card-subtitle>{{post.id}}</mat-card-subtitle>
+                    <mat-card-title style="margin-bottom: 20px;">{{post.title}}</mat-card-title>
+                    <mat-card-content>{{post.body}}</mat-card-content>
+                    <mat-card-actions style="text-align: center;">
+                        <button mat-raised-button color="primary">Edit</button>
+                    </mat-card-actions>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        
+    </div>
+</mat-card>
