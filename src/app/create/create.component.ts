@@ -24,6 +24,7 @@ export class CreateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
   }
 
   addPost() {

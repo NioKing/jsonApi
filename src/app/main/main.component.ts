@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 import { DataService } from '../service/data.service';
 
 @Component({
@@ -12,7 +14,8 @@ export class MainComponent implements OnInit {
   
 
   constructor(
-    private dataService: DataService
+    private dataService: DataService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -47,4 +50,24 @@ export class MainComponent implements OnInit {
     })
   }
   
+
+  // Edit Post 
+  editPost(post: any) {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '550px',
+      data: {
+        post
+      }
+    })
+    dialogRef.afterClosed()
+    .subscribe((result: any) => {
+      if(!result) {
+        return
+      }
+      this.dataService.editPost(result.post)
+      .subscribe((res: any) => {
+        console.log(res);
+      })
+    })
+  }
 }

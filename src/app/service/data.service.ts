@@ -27,7 +27,7 @@ export class DataService {
 
   // Edit Post
   editPost(post: any) {
-    return this.http.patch(`https://jsonplaceholder.typicode.com/posts?${post.id}`, post)
+    return this.http.patch(`https://jsonplaceholder.typicode.com/posts/${post.id}`, post)
   }
 
   // Delete Post

@@ -1,0 +1,17 @@
+<h1>Edit Post</h1>
+<div mat-dialog-content style="display: flex; align-items: center; flex-direction: column;">
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <input matInput placeholder="Enter Title"
+    [(ngModel)]="data.post.title"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <textarea
+      matInput
+      placeholder="Leave a message"
+      style="margin-top: 10px;"
+      [(ngModel)]="data.post.body"
+    ></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+</div>
