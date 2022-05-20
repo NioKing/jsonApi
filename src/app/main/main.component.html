@@ -1,7 +1,7 @@
 <app-create (postEvent)="createPost($event)"></app-create>
 <mat-card>
     <div class="post-list">
-        <div class="post" style="width: 400px; margin: 20px auto; text-align: center;" *ngFor="let post of posts">
+        <div class="post" style="width: 400px; margin: 20px auto; text-align: center;" *ngFor="let post of posts | paginate: {itemsPerPage: 10, currentPage: page, totalItems: totalPosts}">
             <mat-card>
                 <mat-card-content>
                     <div class="delete" style="text-align: end">
@@ -18,4 +18,5 @@
         </div>
         
     </div>
+    <pagination-controls (pageChange)="page = $event; getAllPosts()" style="text-align: center;"></pagination-controls>
 </mat-card>

@@ -11,6 +11,8 @@ import { DataService } from '../service/data.service';
 export class MainComponent implements OnInit {
 
   posts: any[] = []
+  page: number = 1
+  totalPosts: any
   
 
   constructor(
